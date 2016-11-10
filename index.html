@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="LunTest">
+
+<head>
+    <base href="/" />
+
+    <title>LunTest</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,cyrillic">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+    <link rel="stylesheet" href="./app/index.css" charset="utf-8">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.7/angular-local-storage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+
+    <script src="./app/app.js"></script>
+    <script src="./app/app.controller.js"></script>
+    <script src="./app/app.enums.js"></script>
+    <script src="./app/routes/Info/Info.controller.js"></script>
+    <script src="./app/routes/Info/Info.service.js"></script>
+    <script src="./app/routes/Geo/Geo.controller.js"></script>
+    <script src="./app/routes/Animal/Animal.controller.js"></script>
+    <script src="./app/routes/Social/Social.controller.js"></script>
+    <script src="./app/routes/Summary/Summary.controller.js"></script>
+
+
+</head>
+
+<body ng-controller="AppController as Ctrl">
+    <div class="page-container-wrapper">
+        <div class="page-layout">
+            <div>
+                <header>
+                    <div class="header-inner">
+                        <span class="header-title">{{currentRoute.pageTitle}}</span>
+                    </div>
+                </header>
+            </div>
+            <div class="page-content-layout">
+                <div class="page-container column-center">
+                    <main class="content container column-center flex" ui-view></main>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
