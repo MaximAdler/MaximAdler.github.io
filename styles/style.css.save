@@ -1,0 +1,4 @@
+	$c-color: #343434;
+div {
+  font-color: $c-color;
+}

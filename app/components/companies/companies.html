@@ -1,0 +1,81 @@
+<div class="app-container" ng-controller="CompaniesController as CCtrl" id="companies">
+  <!-- Companies block -->
+  <div class="col-xs-12 col-md-7 app-companies text-center" ng-hide="productsShow">
+    <div class="companies-header">
+      <h3>Companies</h3>
+    </div>
+    <div class="companies-content">
+      <!--All companies-->
+      <div class="list-group" ng-repeat="company in companies | orderBy: 'companyName' | filter: filterName | filter: filterCompanyByProducts">
+        <div class="col-xs-10 col-md-12 companies-list">
+          <a href="" class="list-group-item"
+                     ng-click="showProducts(company.companyName)"
+                     ng-model='company.companyName'
+                     ng-hide="editCompanyName">
+                     {{company.companyName}}
+          </a>
+          <input type="text" class="form-control"
+                             name="edited_company"
+                             ng-value="company.companyName"
+                             ng-model="edited_company[$index]"
+                             ng-show="editCompanyName"
+                             ng-style="{'border-color': uniq_edited_company_name ? 'red' : 'none'}"
+                             required>
+          <span class="not-uniq-company" ng-show="editCompanyName" ng-if="uniq_edited_company_name">This company name already exists</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Products block -->
+  <div class="col-xs-12 col-md-7 app-products" ng-show="productsShow">
+    <div class="products-header">
+      <a href="" class="go-back" ng-click="productsShow=false">Go Back</a>
+      <h3 class="text-center">{{products.companyName}} Products</h3>
+    </div>
+    <div class="products-content">
+      <!--All products of selected company-->
+      <div class="list-group" ng-repeat="product in products.companyGoods | filter: filterProducts">
+        <div class="col-xs-10 col-md-12 products-list">
+          <a class="list-group-item"
+             ng-hide="editProductShow">
+             {{product}}
+          </a>
+          <input type="text" class="form-control"
+                             name="edited_product"
+                             ng-model="edited_product[$index]"
+                             ng-value="product"
+                             ng-show="editProductShow">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Filters block -->
+  <div class="col-xs-6 col-md-4 app-filters">
+    <div class="filter-by-name-header">
+      <h3>Filter by name</h3>
+    </div>
+    <div class="filter-by-name-content">
+      <form>
+          <div class="form-group">
+              <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-search">&#x2192;</i></div>
+                  <input type="text" class="form-control filter-input" placeholder="Name" ng-model="filterName">
+              </div>
+          </div>
+      </form>
+    </div>
+    <div class="filter-by-product-header">
+      <h3>Filter by products</h3>
+    </div>
+    <div class="filter-by-product-content">
+      <form>
+          <div class="form-group">
+              <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-search">&#x2192;</i></div>
+                  <input type="text" class="form-control filter-input" placeholder="Product" ng-model="filterCompanyByProducts">
+              </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

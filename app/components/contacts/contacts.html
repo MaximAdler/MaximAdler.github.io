@@ -1,0 +1,42 @@
+<div class="app-contacts" ng-controller="ContactsController as ContactCtrl">
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="text-center">Contact Me</h2>
+            <hr class="star-primary">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8 mx-auto">
+                    <form name="sentMessage" id="contactForm" novalidate="">
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Name</label>
+                                <input class="form-control" id="name" type="text" placeholder="Name" required="" ng-model="name">
+                                <p class="name-contact text-danger hide">Please enter your name.</p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Email Address</label>
+                                <input class="form-control" id="email" type="email" placeholder="Email Address" required="" aria-invalid="false" ng-model="email">
+                                <p class="email-contact text-danger hide">Please enter your email address.</p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <label>Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Message" required="" ng-model="message"></textarea>
+                                <p class="message-contact text-danger hide">Please enter a message.</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success" class="hide">Message has been sended!</div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-info btn-lg" id="sendMessageButton" ng-click="sendMessage()">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

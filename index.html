@@ -1,53 +1,40 @@
 <!DOCTYPE html>
-<html ng-app="LunTest">
+<html ng-app='app'>
 
-<head>
-    <base href="/" />
+  <head>
 
-    <title>LunTest</title>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta charset="utf-8">
+    <title>Uni Module</title>
+    <link rel="shortcut icon" type="image/icon" href="/favicon.ico">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,cyrillic">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
-    <link rel="stylesheet" href="./app/index.css" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/style.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.2.7/angular-local-storage.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app/main.js"></script>
+    <script src="app/app.core/app.controller.js"></script>
+    <script src="app/components/header/header.controller.js"></script>
+    <script src="app/components/companies/companies.controller.js"></script>
+    <script src="app/components/main/mainpage.controller.js"></script>
+    <script src="app/components/about/about.controller.js"></script>
+    <script src="app/components/team/team.controller.js"></script>
+    <script src="app/components/contacts/contacts.controller.js"></script>
+    <script src="app/components/footer/footer.controller.js"></script>
+    <script src="build/main.bundle.js"></script>
 
-    <script src="./app/app.js"></script>
-    <script src="./app/app.controller.js"></script>
-    <script src="./app/app.enums.js"></script>
-    <script src="./app/routes/Info/Info.controller.js"></script>
-    <script src="./app/routes/Info/Info.service.js"></script>
-    <script src="./app/routes/Geo/Geo.controller.js"></script>
-    <script src="./app/routes/Animal/Animal.controller.js"></script>
-    <script src="./app/routes/Social/Social.controller.js"></script>
-    <script src="./app/routes/Summary/Summary.controller.js"></script>
+  </head>
 
-
-</head>
-
-<body ng-controller="AppController as Ctrl">
-    <div class="page-container-wrapper">
-        <div class="page-layout">
-            <div>
-                <header>
-                    <div class="header-inner">
-                        <span class="header-title">{{currentRoute.pageTitle}}</span>
-                    </div>
-                </header>
-            </div>
-            <div class="page-content-layout">
-                <div class="page-container column-center">
-                    <main class="content container column-center flex" ui-view></main>
-                </div>
-            </div>
-        </div>
+  <body ng-controller='AppController as AppCtrl'>
+    <div class="parallax">
+      <parheader></parheader>
+      <mainpage></mainpage>
+      <companies class="hide"></companies>
+      <about class="hide"></about>
+      <team class="hide"></team>
+      <contacts class="hide"></contacts>
+      <parfooter></parfooter>
     </div>
-</body>
-
+  </body>
 </html>

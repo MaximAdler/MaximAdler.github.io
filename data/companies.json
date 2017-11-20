@@ -1,0 +1,32 @@
+[{
+  "companyName": "Apple",
+  "companyGoods": ["IPhone 7", "MacBook Pro", "IPhone 8", "IPhone X", "IPad"]
+},
+{
+  "companyName": "Google",
+  "companyGoods": ["GoogleGlass", "Search", "Robotix"]
+},
+{
+  "companyName": "Yandex",
+  "companyGoods": ["YandexSearch", "YandexTalk"]
+},
+{
+  "companyName": "Tesla",
+  "companyGoods": ["Model 3", "Model X", "Model S"]
+},
+{
+  "companyName": "BMW",
+  "companyGoods": ["i3", "i8"]
+},
+{
+  "companyName": "Samsung",
+  "companyGoods": ["Galaxy 8", "TV S3G8"]
+},
+{
+  "companyName": "Tetra",
+  "companyGoods": ["mobil1", "casu568"]
+},
+{
+  "companyName": "NASA",
+  "companyGoods": ["GEO241PT", "OT26781GD"]
+}]
